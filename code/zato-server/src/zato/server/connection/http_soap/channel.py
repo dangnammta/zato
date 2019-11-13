@@ -683,6 +683,8 @@ class RequestHandler(object):
             if not isinstance(response.payload, basestring):
                 if isinstance(response.payload, dict) and data_format in (DATA_FORMAT.JSON, DATA_FORMAT.DICT):
                     response.payload = dumps(response.payload)
+                elif isinstance(response.payload, dict):
+                    response.payload = dumps(response.payload)
                 else:
                     response.payload = response.payload.getvalue() if response.payload else ''
 
