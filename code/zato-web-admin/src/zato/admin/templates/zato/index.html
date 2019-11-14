@@ -49,11 +49,11 @@
 {% block body %}
     <div>
         <div id="hd">
-            <div id="console-header">&nbsp;<a href="https://zato.io/?v={{ zato_version|cut:"Zato " }}" id="logo-link"><img src="/static/gfx/logo_healthchain.png" alt="Healthchain" style="vertical-align:middle;padding-top:2px;padding-bottom:2px"/></a>
+            <div id="console-header">&nbsp;<a href="https://zato.io/?v={{ zato_version|cut:"Zato " }}" id="logo-link"><img src="/static/gfx/logo_healthchain.png" alt="Healthchain" class="logo-img" /></a>
             {% if user.is_authenticated %}
                 <span id="logout" style="padding-top:10px">
-                    <a class="top" href="{% url "account-settings-basic" %}">My settings</a>
-                    <a class="top"  href="{% url "logout" %}">Log out ({{ user.username }})</a>
+                    <a class="top" href="{% url "account-settings-basic" %}">Cài đặt</a>
+                    <a class="top"  href="{% url "logout" %}">Thoát ({{ user.username }})</a>
                 </span>
             {% endif %}
             </div>
