@@ -49,7 +49,7 @@
 {% block body %}
     <div>
         <div id="hd">
-            <div id="console-header">&nbsp;<a href="https://zato.io/?v={{ zato_version|cut:"Zato " }}" id="logo-link"><img src="/static/gfx/logo.png" alt="Zato logo" style="vertical-align:middle;padding-top:2px;padding-bottom:2px"/></a>
+            <div id="console-header">&nbsp;<a href="https://zato.io/?v={{ zato_version|cut:"Zato " }}" id="logo-link"><img src="/static/gfx/logo_healthchain.png" alt="Healthchain" style="vertical-align:middle;padding-top:2px;padding-bottom:2px"/></a>
             {% if user.is_authenticated %}
                 <span id="logout" style="padding-top:10px">
                     <a class="top" href="{% url "account-settings-basic" %}">My settings</a>
@@ -62,24 +62,24 @@
 
             <div id="main-menu">
                 <ul class="sf-menu" >
-                <li><a href="{% url "cluster" %}">Clusters</a></li>
+                <li><a href="{% url "cluster" %}">Trang chủ</a></li>
 
-                <li><span class="like-a">Services &darr;</span>
+                <li><span class="like-a">Quản lý Dịch vụ &darr;</span>
                     <ul>
-                        <li><a href="{% url "service" %}?cluster={{ cluster_id|default:'' }}">List services</a></li>
+                        <li><a href="{% url "service" %}?cluster={{ cluster_id|default:'' }}">Danh sách các dịch vụ</a></li>
                     </ul>
                 </li>
 
-                <li><span class="like-a">Messages &darr;</span>
+                <li><span class="like-a">Quản lý tin nhắn &darr;</span>
                     <ul>
                         <li>
-                            <span class="like-a">JSON &rarr;</span>
+                            <span class="like-a">Loại JSON &rarr;</span>
                             <ul>
                                 <li><a href="{% url "message-json-pointer" %}?cluster={{ cluster_id|default:'' }}">JSON Pointers</a></li>
                             </ul>
                         </li>
                         <li>
-                            <span class="like-a">XML &rarr;</span>
+                            <span class="like-a">Loại XML &rarr;</span>
                             <ul>
                                 <li><a href="{% url "message-namespace" %}?cluster={{ cluster_id|default:'' }}">Namespaces</a></li>
                                 <li><a href="{% url "message-xpath" %}?cluster={{ cluster_id|default:'' }}">XPath</a></li>
@@ -93,7 +93,7 @@
                     </ul>
                 </li>
 
-                <li><span class="like-a">Security &darr;</span>
+                <li><span class="like-a">Quản lý bảo mật &darr;</span>
                     <ul>
                         <li><a href="{% url "security-apikey" %}?cluster={{ cluster_id|default:'' }}">API keys</a></li>
                         <li><a href="{% url "security-aws" %}?cluster={{ cluster_id|default:'' }}">AWS</a></li>
@@ -138,7 +138,7 @@
                         <li><a href="{% url "security-xpath" %}?cluster={{ cluster_id|default:'' }}">XPath</a></li>
                     </ul>
                 </li>
-                <li><span class="like-a">Connections &darr;</span>
+                <li><span class="like-a">Quản lý kết nối &darr;</span>
                     <ul>
                         <li>
                             <span class="like-a">Definitions &rarr;</span>
@@ -234,22 +234,7 @@
                     </ul>
                 </li>
 
-                <li><span class="like-a">Cloud &darr;</span>
-                    <ul>
-                        <li>
-                            <span class="like-a">AWS &rarr;</span>
-                            <ul>
-                                <li class='wide'><a href="{% url "cloud-aws-s3" %}?cluster={{ cluster_id|default:'' }}">S3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="like-a">OpenStack &rarr;</span>
-                            <ul>
-                                <li class='wide'><a href="{% url "cloud-openstack-swift" %}?cluster={{ cluster_id|default:'' }}">Swift</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                
 
                 <li><span class="like-a">Key/value DB &darr;</span>
                     <ul>
@@ -276,7 +261,7 @@
 
                 <li><a href="{% url "scheduler" %}?cluster={{ cluster_id|default:'' }}">Scheduler</a></li>
 
-                <li><a href="#">Statistics &darr;</a>
+                <li><a href="#">Thống kê Statistics &darr;</a>
                     <ul>
 
                         <li>
@@ -322,9 +307,8 @@
                 </ul>
 
                 <ul class="sf-menu" style="float:right">
-                <li><a href="https://zato.io/docs?v={{ zato_version|cut:"Zato " }}">Docs</a></li>
-                <li><a href="https://github.com/zatosource/zato/issues">Suggest a feature</a></li>
-                <li><a href="https://zato.io/support.html">Support</a></li>
+                <li><a href="https://zato.io/docs?v={{ zato_version|cut:"Zato " }}">Tài liệu</a></li>
+                <li><a href="https://zato.io/support.html">Hỗ trợ</a></li>
 
                 </ul>
                 <br style="clear:left"/>
